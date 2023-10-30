@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 		free_listint(list);
 		return (0);
 	}
-	while (current != NULL)
+	while (current && next && next->next)
 	{
 		current = current->next;
 		next = next->next->next;

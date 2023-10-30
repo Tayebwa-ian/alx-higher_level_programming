@@ -8,11 +8,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *current = list, *next = list;
 
-	if (list == NULL)
-	{
-		free_listint(list);
+	if (!list || !list->next)
 		return (0);
-	}
 	while (current && next && next->next)
 	{
 		current = current->next;

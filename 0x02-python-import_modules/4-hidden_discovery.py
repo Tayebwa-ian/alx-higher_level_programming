@@ -6,7 +6,7 @@ def main():
     lis = dir(hidden_4)
     for i in range(len(lis)):
         if(lis[i][0] != '_'):
-            print("{}".format(lis[i]))
+            print(lis[i])
 
 
 if __name__ == "__main__":

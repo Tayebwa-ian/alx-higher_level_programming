@@ -2,5 +2,5 @@
 
 
 def only_diff_elements(set_1, set_2):
-    set_1.update(set_2)
-    return set_1
+    new_set = set_1.symmetric_difference(set_2)
+    return new_set

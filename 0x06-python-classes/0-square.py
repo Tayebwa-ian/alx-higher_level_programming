@@ -2,6 +2,6 @@
 """Module level Description"""
 
 
-class square:
+class Square:
     """Perform operations on a square """
     pass

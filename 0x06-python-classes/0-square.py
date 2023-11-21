@@ -2,6 +2,5 @@
 
 
 class square:
-    """Perform operations on a square
-
-    """
+    """Perform operations on a square """
+    pass

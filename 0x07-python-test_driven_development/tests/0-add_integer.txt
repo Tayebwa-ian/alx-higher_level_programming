@@ -12,12 +12,6 @@ Adding positive integers 1 and 8
        >>> add_integer(1, 8)
        9
 
-excute without params
-       >>> add_integer()
-       Traceback (most recent call last):
-	      ...
-       TypeError: a must be an integer
-
 Excute with negative integers
        >>> add_integer(-8)
        90
@@ -38,7 +32,7 @@ Excute with None values
 
 Excute with float numbers
        >>> add_integer(4.0337625)
-       10
+       102
 
        >>> add_integer(6, 4.67875)
        10

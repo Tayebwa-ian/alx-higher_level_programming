@@ -1,0 +1,66 @@
+Test the 0-add_integer.py module
+===============================
+
+using add_integer
+
+...............................
+
+Importing the module
+	  >>> add_integer = __import__('0-add_integer').add_integer
+
+Adding positive integers 1 and 8
+       >>> add_integer(1, 8)
+       9
+
+excute without params
+       >>> add_integer()
+       Traceback (most recent call last):
+	      ...
+       TypeError: a must be an integer
+
+Excute with negative integers
+       >>> add_integer(-8)
+       90
+
+       >>> add_integer(-4, -6)
+       -10
+
+Excute with None values
+       >>> add_integer(None)
+       Traceback (most recent call last):
+	      ...
+       TypeError: a must be an integer
+
+       >>> add_integer(4, None)
+       Traceback (most recent call last):
+	      ...
+       TypeError: b must be an integer
+
+Excute with float numbers
+       >>> add_integer(4.0337625)
+       10
+
+       >>> add_integer(6, 4.67875)
+       10
+
+Excute with strings
+       >>> add_integer("two")
+       Traceback (most recent call last):
+	      ...
+       TypeError: a must be an integer
+
+       >>> add_integer(4, "six")
+       Traceback (most recent call last):
+	      ...
+       TypeError: b must be an integer
+
+Excute with other datatypes
+       >>> add_integer([3])
+       Traceback (most recent call last):
+	      ...
+       TypeError: a must be an integer
+
+       >>> add_integer(0,{"al": 2})
+       Traceback (most recent call last):
+	      ...
+       TypeError: b must be an integer

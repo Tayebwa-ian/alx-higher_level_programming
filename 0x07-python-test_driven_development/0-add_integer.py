@@ -16,8 +16,4 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if type(b) not in lst:
         raise TypeError("b must be an integer")
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
-    return a + b
+    return int(a) + int(b)

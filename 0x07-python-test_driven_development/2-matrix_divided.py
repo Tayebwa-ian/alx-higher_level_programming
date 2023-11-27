@@ -21,10 +21,14 @@ def matrix_divided(matrix, div):
     if type(div) not in lst:
         raise TypeError("div must be a number")
     if div == 0:
-        raise TypeError("division by zero")
+        raise ZeroDivisionError("division by zero")
     if type(matrix) is not list:
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
+    if len(matrix) < 2:
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
+
     size = len(matrix[0])
     for el in matrix:
         if type(el) is not list:

@@ -1,0 +1,50 @@
+Test the 2-matrix_divided.py module
+===============================
+
+using matrix_divided
+
+...............................
+
+Importing the module
+	  >>> matrix_divided  = __import__('2-matrix_divided').matrix_divided
+
+Excute with an empty matrix
+       >>> matrix_divided([], 2)
+       Traceback (most recent call last):
+       TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Excute with string values in a 2x2 matrix
+       >>> matrix_divided([[2, 4], ["two", 0]], 2)
+       Traceback (most recent call last):
+       TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Excute with float values in 3x2 matrix
+       >>> m = [[2, 4.2, 6], [8.2, 3, 4]]
+       >>> matrix_divided(m, 2)
+       [[1.0, 2.1, 3.0], [4.1, 1.5, 2.0]]
+
+Excute with div as 0 or div as a string
+       >>> m = [[2, 4.2, 6], [8.2, 3, 4]]
+       >>> matrix_divided(m, 0)
+       Traceback (most recent call last):
+       ZeroDivisionError: division by zero
+
+       >>> matrix_divided(m, "two")
+       Traceback (most recent call last):
+       TypeError: div must be a number
+
+Excute with None values
+       >>> matrix_divided(None, 4)
+       Traceback (most recent call last):
+       TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+       >>> m = [[2, 4.2, 6], [8.2, 3, 4]]
+       >>> matrix_divided(m, None)
+       Traceback (most recent call last):
+       TypeError: div must be a number
+
+Excute with unequal rows
+       >>> m = [[2, 4.2, 6], [8.2, 3]]
+       >>> matrix_divided(m, 2)
+       Traceback (most recent call last):
+       TypeError: Each row of the matrix must have the same size

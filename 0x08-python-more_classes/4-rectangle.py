@@ -94,4 +94,3 @@ class Rectangle:
         Returns: a recreatable string object representation
         """
         return "Rectangle({}, {})".format(self.width, self.height)
-

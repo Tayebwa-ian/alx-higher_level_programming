@@ -25,7 +25,8 @@ class Rectangle:
           -ValueError: if width is less than 0
         Returns: None
         """
-        if type(value) != int:
+        lst = [int, float]
+        if type(value) not in lst:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -48,7 +49,8 @@ class Rectangle:
           -ValueError: if height is less than 0
         Returns: None
         """
-        if type(value) != int:
+        lst = [int, float]
+        if type(value) not in lst:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")

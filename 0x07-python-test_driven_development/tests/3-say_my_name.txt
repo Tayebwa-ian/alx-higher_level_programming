@@ -1,0 +1,30 @@
+Test the 3-say_my_name.py module
+===============================
+
+using say_my_name
+
+...............................
+
+Importing the module
+	  >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+excute with correct values
+       >>> say_my_name("Tayebwa", "Ian")
+       My name is Tayebwa Ian
+
+excute with other datatypes or None
+       >>> say_my_name(4)
+       Traceback (most recent call last):
+       TypeError: first_name must be a string
+
+       >>> say_my_name("Tayebwa", ["ian"])
+       Traceback (most recent call last):
+       TypeError: last_name must be a string
+
+       >>> say_my_name(None)
+       Traceback (most recent call last):
+       TypeError: first_name must be a string
+
+       >>> say_my_name("Tayebwa", None)
+       Traceback (most recent call last):
+       TypeError: last_name must be a string

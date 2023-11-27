@@ -5,8 +5,13 @@
 class Rectangle:
     """Perform operations on rectangles"""
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        """Constructor
+        Args:
+          -width: rectangle width
+          -height: rectangle height
+        """
+        self.width = width
+        self.height = height
 
     @property
     def width(self):

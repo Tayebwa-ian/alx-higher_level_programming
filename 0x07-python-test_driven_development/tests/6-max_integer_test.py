@@ -23,3 +23,6 @@ class TestMaxInteger(unittest.TestCase):
             max_integer([8, 4, []])
         with self.assertRaises(TypeError):
             max_integer(8)
+
+if __name__ == "__main__":
+    unittest.main()

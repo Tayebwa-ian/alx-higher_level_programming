@@ -48,3 +48,15 @@ Excute with unequal rows
        >>> matrix_divided(m, 2)
        Traceback (most recent call last):
        TypeError: Each row of the matrix must have the same size
+
+Excute with missing positional arguments
+       >>> matrix_divided()
+       Traceback (most recent call last):
+       ...
+       TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+       >>> m = [[2, 4.2, 6], [8.2, 3, 4]]
+       >>> matrix_divided(m)
+       Traceback (most recent call last):
+       ...
+       TypeError: matrix_divided() missing 1 required positional argument: 'div'

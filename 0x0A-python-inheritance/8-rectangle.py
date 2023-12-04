@@ -27,6 +27,7 @@ class BaseGeometry:
                              format(name))
         return name
 
+
 class Rectangle(BaseGeometry):
     """The rectangle class"""
     def __init__(self, width, height):
@@ -35,5 +36,5 @@ class Rectangle(BaseGeometry):
           width: width of the rectangle
           height: Height of the rectangle
         """
-        self.__width =self.integer_validator("width", width)
+        self.__width = self.integer_validator("width", width)
         self.__height = self.integer_validator("height", height)

@@ -24,5 +24,5 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """returns the string rep of the object"""
-        return("[{}] {}/{}".
-               format(type(self).__name__, self.__width, self.__height))
+        return("[{}] {}/{}".format(type(self).__name__,
+                                   self.__width, self.__height))

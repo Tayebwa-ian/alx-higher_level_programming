@@ -15,4 +15,4 @@ class Square(Rectangle):
         """Calaculate the area of a rectangle
         Return: area
         """
-        return self.__size * 2
+        return self.__size ** 2

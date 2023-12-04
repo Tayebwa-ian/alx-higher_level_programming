@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Check if object is a subclass of certain class"""
 
+
 def inherits_from(obj, a_class):
     """ Check if object is a subclass of a given class
     Params:

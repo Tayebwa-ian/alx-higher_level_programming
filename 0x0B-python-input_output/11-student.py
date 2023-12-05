@@ -35,4 +35,5 @@ class Student:
           json: a dictionary of items to use to replace
         Return: None
         """
-        self.__dict__ = json
+        for i, j in json.items():
+            self.__dict__[i] = j

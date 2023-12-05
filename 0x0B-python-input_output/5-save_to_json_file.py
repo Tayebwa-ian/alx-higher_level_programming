@@ -10,6 +10,5 @@ def save_to_json_file(my_obj, filename):
       filename: the file to write to
     Return: Number of bytes written to a file
     """
-    st = json.dumps(my_obj)
     with open(filename, 'w', encoding="UTF8") as f:
-        return f.write(st)
+        json.dump(my_obj, f)

@@ -1,4 +1,5 @@
 *.txt
+*.json
 *main.py
 *~
 *.pyc

@@ -19,4 +19,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """returns the string rep of the object"""
-        return("[Square] {}/{}".format(self.__size, self.__size))
+        return "[Square] {}/{}".format(self.__size, self.__size)

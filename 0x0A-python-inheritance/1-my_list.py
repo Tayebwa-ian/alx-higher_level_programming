@@ -29,4 +29,4 @@ class MyList(list):
 
     def __str__(self):
         """Return a string representation of the object of this class"""
-        return("{}".format(self.mylist))
+        return "{}".format(self.mylist)

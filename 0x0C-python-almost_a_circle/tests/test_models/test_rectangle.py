@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Testing rectangle class module"""
 import unittest
-from models import rectangle
+from models import rectangle, base
 
 
 class TestRectangle(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         """create rectangle objects to use"""
         self.obj1 = rectangle.Rectangle(10, 2)
-        self.obj2 = rectangle.Rectangle(10, 2, 0, 0, 12)
+        self.obj2 = rectangle.Rectangle(4, 2, 0, 0, 12)
 
     def test_missing_params(self):
         """check if an instance is successfully created
@@ -18,6 +18,19 @@ class TestRectangle(unittest.TestCase):
             rectangle.Rectangle()
         with self.assertRaises(TypeError):
             rectangle.Rectangle(3)
+
+    def test_instantiation_with_invalid_input(self):
+        """Check for Creation of instances with invalid inputs"""
+        with self.assertRaises(ValueError):
+            rectangle.Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            rectangle.Rectangle(4, -3)
+        with self.assertRaises(ValueError):
+            rectangle.Rectangle(10, 2, 0, -2)
+        with self.assertRaises(TypeError):
+            rectangle.Rectangle("2", 8)
+        with self.assertRaises(TypeError):
+            rectangle.Rectangle(4, 2, "0", 0)
 
     def test_width_setting(self):
         """check for setting and retrieving width functions"""
@@ -96,3 +109,13 @@ class TestRectangle(unittest.TestCase):
             self.obj1.y = 4.3
         with self.assertRaises(ValueError):
             self.obj2.y = -3
+
+    def test_rectangle_area(self):
+        """Test for correct output value for area of the rectangle"""
+        self.assertEqual(self.obj1.area(), 20)
+        self.assertEqual(self.obj2.area(), 8)
+
+    def test_rectangle_inheritance(self):
+        """check if rectangle inherits from base class"""
+        self.assertIsInstance(self.obj1, type(base.Base()))
+        self.assertIsInstance(self.obj2, type(base.Base()))

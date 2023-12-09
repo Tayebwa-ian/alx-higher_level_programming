@@ -22,9 +22,7 @@ class TestRectangle(unittest.TestCase):
     def test_width_setting(self):
         """check for setting and retrieving width functions"""
         self.obj1.width = 3
-        self.obj2.width = -2
         self.assertEqual(self.obj1.width, 3)
-        self.assertEqual(self.obj2.width, -2)
 
     def test_height_setting(self):
         """check for setting and retrieving height functions"""
@@ -34,7 +32,9 @@ class TestRectangle(unittest.TestCase):
     def test_x_setting(self):
         """check for setting and retrieving x functions"""
         self.obj1.x = 3
+        self.obj2.x = 0
         self.assertEqual(self.obj1.x, 3)
+        self.assertEqual(self.obj2.x, 0)
 
     def test_y_setting(self):
         """check for setting and retrieving y functions"""
@@ -51,3 +51,48 @@ class TestRectangle(unittest.TestCase):
         self.assertGreater(len(self.obj2.y.__doc__), 0)
         self.assertGreater(len(self.obj2.__init__.__doc__), 0)
 
+    def test_invalid_width_input(self):
+        """set width value with invalid input"""
+        with self.assertRaises(TypeError):
+            self.obj1.width = "1"
+        with self.assertRaises(TypeError):
+            self.obj2.width = [1,2]
+        with self.assertRaises(TypeError):
+            self.obj1.width = 4.3
+        with self.assertRaises(ValueError):
+            self.obj1.width = 0
+        with self.assertRaises(ValueError):
+            self.obj2.width = -3
+
+    def test_invalid_height_input(self):
+        """set height value with invalid input"""
+        with self.assertRaises(TypeError):
+            self.obj1.height = "1"
+        with self.assertRaises(TypeError):
+            self.obj2.height = 1.83
+        with self.assertRaises(ValueError):
+            self.obj1.height = 0
+        with self.assertRaises(ValueError):
+            self.obj2.height = -3
+
+    def test_invalid_x_input(self):
+        """set x value with invalid input"""
+        with self.assertRaises(TypeError):
+            self.obj1.x = "1"
+        with self.assertRaises(TypeError):
+            self.obj2.x = [1,2]
+        with self.assertRaises(TypeError):
+            self.obj1.x = 4.3
+        with self.assertRaises(ValueError):
+            self.obj2.x = -3
+
+    def test_invalid_y_input(self):
+        """set y value with invalid input"""
+        with self.assertRaises(TypeError):
+            self.obj1.y = "1"
+        with self.assertRaises(TypeError):
+            self.obj2.y = [1,2]
+        with self.assertRaises(TypeError):
+            self.obj1.y = 4.3
+        with self.assertRaises(ValueError):
+            self.obj2.y = -3

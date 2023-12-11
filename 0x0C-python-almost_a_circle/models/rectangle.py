@@ -222,3 +222,11 @@ class Rectangle(Base):
                 if kwargs["y"] < 0:
                     raise ValueError("y must be >= 0")
                 self.__y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+            returns the dictionary
+            representation of a Rectangle
+        """
+        return {'id': self.id, 'width': self.width,
+                'height': self.height, 'x': self.x, 'y': self.y}

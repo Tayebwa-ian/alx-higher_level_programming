@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """Models Module"""
+import json
 
 
 class Base:

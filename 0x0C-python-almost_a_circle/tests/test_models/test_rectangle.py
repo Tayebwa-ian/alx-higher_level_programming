@@ -121,7 +121,7 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(self.obj2, type(base.Base()))
 
     def test_update(self):
-        """Check updating function"""
+        """Check updating function works with args and kwargs"""
         self.obj1.update(2, 5, 8, 9, 2)
         self.obj2.update(6)
         self.assertEqual(self.obj1.id, 2)
@@ -135,3 +135,9 @@ class TestRectangle(unittest.TestCase):
             self.obj1.update(1, 4, 3, "2")
         with self.assertRaises(ValueError):
             self.obj1.update(2, 4, 5, 0, -2)
+        self.obj2.update(2, 2, 2, 2, 2, width=3, height=3, x=3, y=3, id=3)
+        self.assertEqual(str(self.obj2), "[Rectangle] (2) 2/2 - 2/2")
+        self.obj2.update(width=4)
+        self.assertEqual(self.obj2.width, 4)
+        with self.assertRaises(TypeError):
+            self.obj2.update(y="2")

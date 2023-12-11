@@ -172,56 +172,24 @@ class Rectangle(Base):
                 if i == 0:
                     self.id = args[i]
                 if i == 1:
-                    if type(args[i]) is not int:
-                        raise TypeError("width must be an integer")
-                    if args[i] <= 0:
-                        raise ValueError("width must be > 0")
-                    self.__width = args[i]
+                    self.width = args[i]
                 if i == 2:
-                    if type(args[i]) is not int:
-                        raise TypeError("height must be an integer")
-                    if args[i] <= 0:
-                        raise ValueError("height must be > 0")
-                    self.__height = args[i]
+                    self.height = args[i]
                 if i == 3:
-                    if type(args[i]) is not int:
-                        raise TypeError("x must be an integer")
-                    if args[i] < 0:
-                        raise ValueError("x must be >= 0")
-                    self.__x = args[i]
+                    self.x = args[i]
                 if i == 4:
-                    if type(args[i]) is not int:
-                        raise TypeError("y must be an integer")
-                    if args[i] < 0:
-                        raise ValueError("y must be >= 0")
-                    self.__y = args[i]
+                    self.y = args[i]
         elif len(kwargs) > 0 and len(args) == 0:
             if "id" in kwargs.keys():
                 self.id = kwargs["id"]
             if "width" in kwargs.keys():
-                if type(kwargs["width"]) is not int:
-                    raise TypeError("width must be an integer")
-                if kwargs["width"] <= 0:
-                    raise ValueError("width must be > 0")
-                self.__width = kwargs["width"]
+                self.width = kwargs["width"]
             if "height" in kwargs.keys():
-                if type(kwargs["height"]) is not int:
-                    raise TypeError("height must be an integer")
-                if kwargs["height"] <= 0:
-                    raise ValueError("height must be > 0")
-                self.__height = kwargs["height"]
+                self.height = kwargs["height"]
             if "x" in kwargs.keys():
-                if type(kwargs["x"]) is not int:
-                    raise TypeError("x must be an integer")
-                if kwargs["x"] < 0:
-                    raise ValueError("x must be >= 0")
-                self.__x = kwargs["x"]
+                self.x = kwargs["x"]
             if "y" in kwargs.keys():
-                if type(kwargs["y"]) is not int:
-                    raise TypeError("y must be an integer")
-                if kwargs["y"] < 0:
-                    raise ValueError("y must be >= 0")
-                self.__y = kwargs["y"]
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
         """

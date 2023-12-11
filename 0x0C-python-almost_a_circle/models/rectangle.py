@@ -195,7 +195,7 @@ class Rectangle(Base):
                     if args[i] < 0:
                         raise ValueError("y must be >= 0")
                     self.__y = args[i]
-        elif len(kwargs) > 0:
+        elif len(kwargs) > 0 and len(args) == 0:
             if "id" in kwargs.keys():
                 self.id = kwargs["id"]
             if "width" in kwargs.keys():

@@ -151,7 +151,7 @@ class Rectangle(Base):
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
-            print(" " * self.x, end="")
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def __str__(self):
@@ -160,3 +160,65 @@ class Rectangle(Base):
                                                        self.__x, self.__y,
                                                        self.__width,
                                                        self.__height)
+
+    def update(self, *args, **kwargs):
+        """Update id, width, height, x and y values using args
+        Param:
+          args: arbitrary no-keyword args
+        Return: None
+        """
+        if len(args) > 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    if type(args[i]) is not int:
+                        raise TypeError("width must be an integer")
+                    if args[i] <= 0:
+                        raise ValueError("width must be > 0")
+                    self.__width = args[i]
+                if i == 2:
+                    if type(args[i]) is not int:
+                        raise TypeError("height must be an integer")
+                    if args[i] <= 0:
+                        raise ValueError("height must be > 0")
+                    self.__height = args[i]
+                if i == 3:
+                    if type(args[i]) is not int:
+                        raise TypeError("x must be an integer")
+                    if args[i] < 0:
+                        raise ValueError("x must be >= 0")
+                    self.__x = args[i]
+                if i == 4:
+                    if type(args[i]) is not int:
+                        raise TypeError("y must be an integer")
+                    if args[i] < 0:
+                        raise ValueError("y must be >= 0")
+                    self.__y = args[i]
+        elif len(kwargs) > 0:
+            if "id" in kwargs.keys():
+                self.id = kwargs["id"]
+            if "width" in kwargs.keys():
+                if type(kwargs["width"]) is not int:
+                    raise TypeError("width must be an integer")
+                if kwargs["width"] <= 0:
+                    raise ValueError("width must be > 0")
+                self.__width = kwargs["width"]
+            if "height" in kwargs.keys():
+                if type(kwargs["height"]) is not int:
+                    raise TypeError("height must be an integer")
+                if kwargs["height"] <= 0:
+                    raise ValueError("height must be > 0")
+                self.__height = kwargs["height"]
+            if "x" in kwargs.keys():
+                if type(kwargs["x"]) is not int:
+                    raise TypeError("x must be an integer")
+                if kwargs["x"] < 0:
+                    raise ValueError("x must be >= 0")
+                self.__x = kwargs["x"]
+            if "y" in kwargs.keys():
+                if type(kwargs["y"]) is not int:
+                    raise TypeError("y must be an integer")
+                if kwargs["y"] < 0:
+                    raise ValueError("y must be >= 0")
+                self.__y = kwargs["y"]

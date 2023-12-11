@@ -119,3 +119,19 @@ class TestRectangle(unittest.TestCase):
         """check if rectangle inherits from base class"""
         self.assertIsInstance(self.obj1, type(base.Base()))
         self.assertIsInstance(self.obj2, type(base.Base()))
+
+    def test_update(self):
+        """Check updating function"""
+        self.obj1.update(2, 5, 8, 9, 2)
+        self.obj2.update(6)
+        self.assertEqual(self.obj1.id, 2)
+        self.assertEqual(self.obj1.area(), 40)
+        self.assertEqual(self.obj2.id, 6)
+        with self.assertRaises(TypeError):
+            self.obj1.update(1, "3", 4)
+        with self.assertRaises(ValueError):
+            self.obj1.update(1, 3, 0)
+        with self.assertRaises(TypeError):
+            self.obj1.update(1, 4, 3, "2")
+        with self.assertRaises(ValueError):
+            self.obj1.update(2, 4, 5, 0, -2)

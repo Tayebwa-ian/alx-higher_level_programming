@@ -7,16 +7,16 @@ class Square extends Rectangle {
   }
 
   charPrint (c) {
-    if (isNaN(c)) {
-      this.print();
-    } else {
-      for (let i = 0; i < this.height; i++) {
-        let ch = '';
-        for (let j = 0; j < this.width; j++) {
+    for (let i = 0; i < this.height; i++) {
+      let ch = '';
+      for (let j = 0; j < this.width; j++) {
+        if (c) {
           ch += c;
+        } else {
+          ch += 'X';
         }
-        console.log(ch);
       }
+      console.log(ch);
     }
   }
 }

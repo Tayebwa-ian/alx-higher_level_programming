@@ -1,18 +1,20 @@
 #!/usr/bin/node
 
-const argv = process.argv.map((el, _idx) => Number(el));
+const args = process.argv;
+const argv = args.slice(2).map((el, _idx) => Number(el));
 let largest, seclargest;
-largest = argv[2];
+largest = argv[0];
 seclargest = 0;
-for (let i = 2; i < argv.length; i++) {
-    if (argv[i] >= largest) {
-	seclargest = largest;
-	largest = argv[i];
-	for (let j = 2; j < argv.length; j++) {
-	    if (argv[j] > seclargest && argv[j] != argv[i]) {
-		seclargest = argv[j];
-	    }
-	}
+for (let i = 0; i < argv.length; i++) {
+  if (argv[i] >= largest && argv.length > 1) {
+    seclargest = largest;
+    largest = argv[i];
+    for (let j = 0; j < argv.length; j++) {
+      if (argv[j] > seclargest && argv[j] !==
+          argv[i]) {
+        seclargest = argv[j];
+      }
     }
+  }
 }
 console.log(seclargest);

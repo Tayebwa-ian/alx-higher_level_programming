@@ -7,7 +7,9 @@ largest = argv[0];
 seclargest = 0;
 for (let i = 0; i < argv.length; i++) {
   if (argv[i] >= largest && argv.length > 1) {
-    seclargest = largest;
+    if (argv[i] !== largest) {
+      seclargest = largest;
+    }
     largest = argv[i];
     for (let j = 0; j < argv.length; j++) {
       if (argv[j] > seclargest && argv[j] !==

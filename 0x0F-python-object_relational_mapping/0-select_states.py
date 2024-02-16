@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Make a connectiion to the database using the MySQldb module"""
 import MySQLdb
 import sys
 

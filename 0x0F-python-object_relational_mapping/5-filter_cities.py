@@ -19,10 +19,13 @@ if __name__ == "__main__":
 
     cursor.execute(query, (state_name,))
     rows = cursor.fetchall()
-    for row in rows:
-        if row is not rows[-1]:
-            print(row[0], end=", ")
-        else:
-            print(row[0])
+    if len(rows) > 0:
+        for row in rows:
+            if row is not rows[-1]:
+                print(row[0], end=", ")
+            else:
+                print(row[0])
+    else:
+        print()
     cursor.close()
     db.close()

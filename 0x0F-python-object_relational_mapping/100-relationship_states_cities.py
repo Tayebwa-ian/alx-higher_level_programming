@@ -2,9 +2,9 @@
 """create state california with city as francisco"""
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 from relationship_city import City
-from relationship_state import State
+from relationship_state import State, Base
 
 
 if __name__ == "__main__":
@@ -17,10 +17,11 @@ if __name__ == "__main__":
                                             ),
                             pool_pre_ping=True
                                 )
-    session = Session(engine)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    city = City(name="San Francisco")
     state = State(name="California")
-    city = City(
-        name="San Francisco",
-        state=state)
+    city.state = state
     session.add(city)
     session.commit()

@@ -18,7 +18,7 @@ def find_peak(list_of_integers) -> int:
         elif length > 2:
             m = length // 2
             temp = list_of_integers[0]
-            while i < m:
+            while i <= m:
                 temp = list_of_integers[i]
                 if list_of_integers[i] < list_of_integers[j]:
                     temp = list_of_integers[j]

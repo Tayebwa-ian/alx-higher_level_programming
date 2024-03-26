@@ -4,10 +4,8 @@
 const request = require('request');
 
 const url = process.argv.slice(2)[0];
-request(url, (err, response, body) => {
-  if (err) {
-    console.log(err);
-  } else {
+request
+  .get(url)
+  .on('response', (response) => {
     console.log(`code: ${response.statusCode}`);
-  }
-});
+  });

@@ -6,7 +6,7 @@ const request = require('request');
 const url = process.argv.slice(2)[0];
 request(url, (err, response, body) => {
   if (err) {
-    console.log(err);
+    console.log('An error occured. Status code: ' + response.statusCode);
   } else {
     const content = JSON.parse(body);
     const films = content.results;

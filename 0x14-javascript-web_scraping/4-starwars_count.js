@@ -14,8 +14,11 @@ request(url, (err, response, body) => {
     for (const i in films) {
       // collection of all film characters
       const cast = films[i].characters;
-      if (cast.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-        count += 1;
+      for (const j in cast) {
+        const id = cast[j].split('/')[5];
+        if (id === '18') {
+          count++;
+        }
       }
     }
     console.log(count);

@@ -11,7 +11,7 @@ request(resource, (err, response, body) => {
   } else {
     const content = JSON.parse(body);
     const cast = content.characters;
-    for (const i in cast) {
+    for (let i = 0; i < cast.length; i++) {
       request(cast[i], (er, resp, body2) => {
         if (er) {
           console.log('Error: can not fetch a character');
